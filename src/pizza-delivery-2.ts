@@ -20,17 +20,16 @@ export function housesDelivered(directions: string, includeGoat: boolean = false
     const startingPoint =  { x: 0, y: 0 };
 
     // Initiate Maria and Clovis locations
-    let mariaLocation = {...startingPoint};
-    let clovisLocation = {...startingPoint};
+    const mariaLocation = {...startingPoint};
+    const clovisLocation = {...startingPoint};
 
     // Create list of visited houses
-    let houseMap = [];
-    houseMap.push({...startingPoint});
+    const houseMap = [{...startingPoint}];
 
     // Loop through directions
     for (let i = 0; i < directions.length; i++) {
         const isClovisMove = includeGoat && i % 2 === 0;
-        let location = isClovisMove ? clovisLocation : mariaLocation;
+        const location = isClovisMove ? clovisLocation : mariaLocation;
         // move location
         switch (directions[i].toLowerCase()) {
             case '^':
