@@ -3,10 +3,11 @@ import { EmployeeList } from "./employee-list";
 import { VisitedAddresses } from "./visited-addresses";
 
 export function housesDelivered(directions: string, numberOfEmployees: number = 1): number {
+    // If directions are empty, return 0.
     if (directions.length < 1) {
         return 0;
     }
-    
+
     // Initialize employees
     const employees = new EmployeeList();
     for (let i = 1; i <= numberOfEmployees; i++) {
